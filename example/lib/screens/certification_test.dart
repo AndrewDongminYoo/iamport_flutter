@@ -7,7 +7,7 @@ import 'package:iamport_flutter/model/url_data.dart';
 import 'package:iamport_flutter_example/model/carrier.dart';
 
 class CertificationTest extends StatefulWidget {
-  const CertificationTest({Key? key}) : super(key: key);
+  const CertificationTest({super.key});
 
   @override
   State<CertificationTest> createState() => _CertificationTestState();
@@ -34,7 +34,7 @@ class _CertificationTestState extends State<CertificationTest> {
         backgroundColor: Colors.blue,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios),
-          onPressed: Get.back,
+          onPressed: () => Get.back<void>(),
         ),
       ),
       body: SafeArea(

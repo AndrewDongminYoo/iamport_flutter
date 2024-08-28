@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CertificationResult extends StatelessWidget {
-  const CertificationResult({Key? key}) : super(key: key);
+  const CertificationResult({super.key});
 
   static const Color successColor = Color(0xff52c41a);
   static const Color failureColor = Color(0xfff5222d);

@@ -39,7 +39,7 @@ extension SuccessResult on PaymentResultPayload {
 }
 
 class PaymentResult extends StatelessWidget {
-  const PaymentResult({Key? key}) : super(key: key);
+  const PaymentResult({super.key});
 
   static const Color successColor = Color(0xff52c41a);
   static const Color failureColor = Color(0xfff5222d);
