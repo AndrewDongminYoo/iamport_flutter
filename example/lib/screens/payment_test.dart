@@ -12,7 +12,7 @@ import 'package:iamport_flutter_example/model/pg.dart';
 import 'package:iamport_flutter_example/model/quota.dart';
 
 class PaymentTest extends StatefulWidget {
-  const PaymentTest({Key? key}) : super(key: key);
+  const PaymentTest({super.key});
 
   @override
   State<PaymentTest> createState() => _PaymentTestState();
@@ -45,7 +45,7 @@ class _PaymentTestState extends State<PaymentTest> {
         backgroundColor: Colors.blue,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios),
-          onPressed: Get.back,
+          onPressed: () => Get.back<void>(),
         ),
       ),
       body: SafeArea(

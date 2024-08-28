@@ -5,7 +5,7 @@ import 'package:iamport_flutter/iamport_payment.dart';
 import 'package:iamport_flutter/model/payment_data.dart';
 
 class Payment extends StatelessWidget {
-  const Payment({Key? key}) : super(key: key);
+  const Payment({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class Payment extends StatelessWidget {
         backgroundColor: Colors.blue,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios),
-          onPressed: Get.back,
+          onPressed: () => Get.back<void>(),
         ),
       ),
       initialChild: SafeArea(

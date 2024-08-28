@@ -16,7 +16,7 @@ void main() {
 }
 
 class IamportApp extends StatefulWidget {
-  const IamportApp({Key? key}) : super(key: key);
+  const IamportApp({super.key});
 
   @override
   State<IamportApp> createState() => _IamportAppState();

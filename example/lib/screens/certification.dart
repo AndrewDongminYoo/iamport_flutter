@@ -5,7 +5,7 @@ import 'package:iamport_flutter/iamport_certification.dart';
 import 'package:iamport_flutter/model/certification_data.dart';
 
 class Certification extends StatelessWidget {
-  const Certification({Key? key}) : super(key: key);
+  const Certification({super.key});
 
   @override
   Widget build(BuildContext context) {
