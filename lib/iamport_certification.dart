@@ -67,7 +67,7 @@ class IamportCertification extends StatelessWidget {
           return url.startsWith(redirectUrl);
         },
         // 인증에는 customPGAction 수행할 필요 없음
-        customPGAction: (WebViewController controller) {},
+        customPGAction: (WebViewController controller) async => null,
       );
     } else {
       return IamportError(ActionType.auth, validation.getErrorMessage());

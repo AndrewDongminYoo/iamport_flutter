@@ -44,7 +44,7 @@ class IamportWebView extends StatefulWidget {
   final ValueSetter<WebViewController> executeJS;
   final ValueSetter<Map<String, String>> useQueryData;
   final bool Function(String url) isPaymentOver;
-  final dynamic Function(WebViewController controller) customPGAction;
+  final Future<StreamSubscription<Uri>?>? Function(WebViewController controller) customPGAction;
   final Set<Factory<OneSequenceGestureRecognizer>>? gestureRecognizers;
   final String? customUserAgent;
 
@@ -54,7 +54,7 @@ class IamportWebView extends StatefulWidget {
 
 class _IamportWebViewState extends State<IamportWebView> {
   late WebViewController _webViewController;
-  StreamSubscription? _sub;
+  StreamSubscription<Uri>? _sub;
   late int _isWebviewLoaded;
   late int _isImpLoaded;
 
@@ -95,11 +95,11 @@ class _IamportWebViewState extends State<IamportWebView> {
               javascriptMode: JavascriptMode.unrestricted,
               gestureRecognizers: widget.gestureRecognizers,
               userAgent: widget.customUserAgent,
-              onWebViewCreated: (WebViewController controller) {
+              onWebViewCreated: (WebViewController controller) async {
                 _webViewController = controller;
                 if (widget.type == ActionType.payment) {
                   // 스마일페이, 나이스 실시간 계좌이체
-                  _sub = widget.customPGAction(_webViewController);
+                  _sub = await widget.customPGAction(_webViewController);
                 }
               },
               onPageFinished: (String url) {

@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
@@ -73,8 +72,7 @@ class IamportPayment extends StatelessWidget {
           /* [v0.9.6] niceMobileV2: true 대비 코드 작성 */
           if (data.pg == 'nice' && data.payMethod == 'trans') {
             try {
-              final StreamSubscription sub =
-                  _appLinks.uriLinkStream.listen((Uri? link) async {
+              final sub = _appLinks.uriLinkStream.listen((Uri? link) async {
                 if (link != null) {
                   final decodedUrl = Uri.decodeComponent(link.toString());
                   final parsedUrl = Uri.parse(decodedUrl);
